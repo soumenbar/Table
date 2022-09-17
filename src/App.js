@@ -5,10 +5,17 @@ import Table from "./Table";
 
 function App() {
   let[row,setRow]=useState([]);
+  let[count,setCount]=useState(0);
   function handleRemove(e){
-    
+    setCount(count-1);
     e.target.parentNode.parentNode.remove()
 
+   
+
+  }
+  function handleAdd(){
+    setRow([...row,1]);
+    setCount(count+1);
   }
 
 
@@ -18,8 +25,9 @@ function App() {
     <div className="App">
       {/* <Form/> */}
       <table>
-                <thead>
-                  <tr>
+                {count>0 && <thead>
+                  
+                 <tr>
                     <td>Column1</td>
                     <td>Column2</td>
                     <td>Column3</td>
@@ -30,7 +38,7 @@ function App() {
                   </tr>
                   
 
-                </thead>
+                </thead>}
                 <tbody>
                   {row.map((ele,index)=>
                     <tr key={index} id={index}>
@@ -40,7 +48,7 @@ function App() {
                   
                  </tbody>
       </table>   
-      <button onClick={()=>setRow([...row,1])}>Add</button>         
+      <button onClick={()=>handleAdd()}>Add</button>         
       
  
     </div>
