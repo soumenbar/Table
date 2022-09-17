@@ -19,6 +19,15 @@ function App() {
       {/* <Form/> */}
       <table>
                 <thead>
+                  <tr>
+                    <td>Column1</td>
+                    <td>Column2</td>
+                    <td>Column3</td>
+                    <td></td>
+                    <td>Addition</td>
+
+
+                  </tr>
                   
 
                 </thead>
