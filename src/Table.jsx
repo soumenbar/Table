@@ -27,9 +27,9 @@ export default function Table(props){
                         <td><input type="number" placeholder={0} onInput={(e)=>setCol2(e.target.value)}/></td>
                         <td><input type="number" placeholder={0} onInput={(e)=>setCol3(e.target.value)}/></td>
 
-                        <td><button onClick={handleAdd}>Add Value</button></td>
+                        <td><button onClick={handleAdd}>Row Sum +</button></td>
                         <td><input type="text" value={sum} onChange={(e)=>(e.target.value=sum)}/></td>
-                        <td><button onClick={(e)=>props.fun(e)}>Remove</button></td>
+                        <td><button onClick={(e)=>props.fun(e)}>Remove Row</button></td>
                         
         
         </>

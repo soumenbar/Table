@@ -24,6 +24,7 @@ function App() {
   return (
     <div className="App">
       {/* <Form/> */}
+      <button onClick={()=>handleAdd()}>Add Row</button> 
       <table>
                 {count>0 && <thead>
                   
@@ -47,8 +48,24 @@ function App() {
                     }
                   
                  </tbody>
+
+                 {count>0 &&<tfoot>
+                  <tr>
+                     <td><button>Column Sum +</button></td>
+                     <td><button>Column Sum +</button></td>
+                     <td><button>Column Sum +</button></td>
+                     
+                   </tr>
+
+                   <tr>
+                     <td><input type="number"/></td>
+                     <td><input type="number"/></td>
+                     <td><input type="number"/></td>
+                     
+                   </tr>
+                 </tfoot>}
       </table>   
-      <button onClick={()=>handleAdd()}>Add</button>         
+              
       
  
     </div>
