@@ -7,23 +7,30 @@ export default function Table(props){
     let[col3,setCol3]=useState(0);
     console.log(sum);
 
-    function handleRow1(e){
-        setCol1(e.target.value) 
-       setSum(parseInt(col1)+parseInt(col2)+parseInt(col3))
-       
+
+    function handleAdd(){
+        if(isNaN(parseInt(col1)+parseInt(col2)+parseInt(col3)))
+          setSum(0);
+          else
+        setSum(parseInt(col1)+parseInt(col2)+parseInt(col3))
+
+        
+        
+
     }
 
   
     return(
         <>
             
-                        <td><input type="number" defaultValue={col1} onBlur={(e)=>{handleRow1(e)}}/></td>
-                        <td><input type="number" defaultValue={col2}/></td>
-                        <td><input type="number" defaultValue={col3}/></td>
-                        
+                        <td><input type='number' placeholder={0} onInput={(e)=>setCol1(e.target.value)}/></td>
+                        <td><input type="number" placeholder={0} onInput={(e)=>setCol2(e.target.value)}/></td>
+                        <td><input type="number" placeholder={0} onInput={(e)=>setCol3(e.target.value)}/></td>
 
-                        <td><button onClick={(e)=>props.fun(e)}>Remove</button></td>
+                        <td><button onClick={handleAdd}>Add Value</button></td>
                         <td><input type="text" value={sum} onChange={(e)=>(e.target.value=sum)}/></td>
+                        <td><button onClick={(e)=>props.fun(e)}>Remove</button></td>
+                        
         
         </>
     );
