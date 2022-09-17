@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+
+import Table from "./Table";
+
 
 function App() {
+  let[row,setRow]=useState([]);
+  function handleRemove(e){
+    
+    e.target.parentNode.parentNode.remove()
+
+  }
+
+
+  console.log(row);
+    
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Form/> */}
+      <table>
+                <thead>
+                  
+
+                </thead>
+                <tbody>
+                  {row.map((ele,index)=>
+                    <tr key={index} id={index}>
+                    <Table fun={handleRemove}/>
+                    </tr>)
+                    }
+                  
+                 </tbody>
+      </table>   
+      <button onClick={()=>setRow([...row,1])}>Add</button>         
+      
+ 
     </div>
   );
 }
